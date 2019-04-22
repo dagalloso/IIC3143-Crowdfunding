@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example</title>
+    <title>DonaTio</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,33 @@
   </head>
 
   <body>
+    <% if donor_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_donor_session_path, method: :delete) %>  
+        <%= link_to('Edit user', edit_donor_registration_path) %>      
+      </li>
+    <% elsif socialcompany_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_socialcompany_session_path, method: :delete) %>
+        <%= link_to('Edit user', edit_socialcompany_registration_path) %>         
+      </li>
+    <% elsif company_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_company_session_path, method: :delete) %>
+        <%= link_to('Edit user', edit_company_registration_path) %>         
+      </li>
+    <% else %>
+      <li>
+        <%= link_to('Login Donor', new_donor_session_path)  %> 
+        <%= link_to('Login Social Company', new_socialcompany_session_path)  %> 
+        <%= link_to('Login Company', new_company_session_path)  %>  
+      </li>
+      <li>
+        <%= link_to('Register Donor', new_donor_registration_path)  %>
+        <%= link_to('Register Social Company', new_socialcompany_registration_path)  %>
+        <%= link_to('Register Company', new_company_registration_path)  %>
+      </li>
+    <% end %>
     <%= yield %>
   </body>
 </html>

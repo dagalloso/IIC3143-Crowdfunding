@@ -6,10 +6,10 @@ module Accessible
   
     protected
     def check_user
-        if current_donot
+        if current_donor
             flash.clear
             # if you have rails_admin. You can redirect anywhere really
-            redirect_to(authenticated_donor_root_path) && return
+            redirect_to(authenticated_donor_root_path) && return # Aqui y en las siguientes hay que poner una ruta existente
         elsif current_company
             flash.clear
             # The authenticated root path can be defined in your routes.rb in: devise_scope :user do...

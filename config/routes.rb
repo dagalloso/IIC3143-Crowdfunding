@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'static_pages#home'
+  
   devise_for :socialcompanies, path: 'sc', controllers: {sessions: 'socialcompanies/sessions'}
   devise_for :companies, path: 'company', controllers: {sessions: 'companies/sessions'}
   devise_for :donors, path: 'donor', controllers: {sessions: 'donors/sessions', registrations: 'donors/registrations'}

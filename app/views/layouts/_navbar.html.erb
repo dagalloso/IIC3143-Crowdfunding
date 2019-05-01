@@ -1,0 +1,23 @@
+<ul class='nav sticky-top navbar-dark bg-dark p-3 mb-3'>
+  <a class="navbar-brand" href="/">DonaTio</a>
+    <form class="form-inline mr-auto">
+      <div class="input-group">
+        <input class="form-control" type="search" placeholder="Buscar proyectos sociales" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </div>
+      </div>
+    </form>
+  <% if current_user %>
+  <li class='nav-item'>
+    <%= link_to('Cerrar sesión', :logout_path, method: :delete, class: 'nav-link text-white font-weight-bold') %>
+  </li>
+  <% else %>
+  <li class='nav-item'>
+    <%= link_to('Iniciar sesión', :login_path, class: 'nav-link text-white font-weight-bold') %>
+  </li>
+  <li class='nav-item'>
+    <%= link_to('Registrarse', :registration_table_path, class: 'nav-link text-white font-weight-bold') %>
+  </li>
+  <% end %>
+</ul>

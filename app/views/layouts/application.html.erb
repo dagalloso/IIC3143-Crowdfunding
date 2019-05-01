@@ -22,7 +22,9 @@
     <% elsif company_signed_in? %>
       <li>
         <%= link_to('Logout', destroy_company_session_path, method: :delete) %>
-        <%= link_to('Edit user', edit_company_registration_path) %>         
+        <%= link_to('Edit user', edit_company_registration_path) %> 
+        <%= link_to('Benefits', company_benefits_path(@company.id)) %> 
+
       </li>
     <% else %>
       <li>

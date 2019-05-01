@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @benefit.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @benefit.description %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @benefit.company_id %>
+</p>
+
+<%= link_to 'Edit', edit_company_benefit_path(@company.id, @benefit.id) %> |
+<%= link_to 'Back', company_benefits_path %>

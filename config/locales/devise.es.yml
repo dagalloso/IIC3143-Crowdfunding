@@ -1,4 +1,25 @@
 es:
+  activerecord:
+    attributes:
+      donor:
+        password: "Contraseña"
+        email: "Email"
+        name: "Nombre"
+        password_confirmation: "Confirmación de contraseña"
+        current_password: "Contraseña actual"
+      company:
+        password: "Contraseña"
+        email: "Email"
+        name: "Nombre"
+        password_confirmation: "Confirmación de contraseña"
+        current_password: "Contraseña actual"
+      socialcompany:
+        password: "Contraseña"
+        email: "Email"
+        name: "Nombre"
+        password_confirmation: "Confirmación de contraseña"
+        current_password: "Contraseña actual"
+
   errors:
     messages:
       expired: "ha expirado, por favor pide una nueva"
